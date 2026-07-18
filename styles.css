@@ -256,7 +256,7 @@ section {
 .bio-image {
     height: 450px;
     border-radius: var(--radius);
-    background: url('perfil1.png') center top / cover no-repeat;
+    background: url('perfil1.PNG') center top / cover no-repeat;
     box-shadow: var(--shadow);
     transition: var(--transition);
     flex: 1;
@@ -681,10 +681,12 @@ section {
         gap: 0.5rem;
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        background: rgba(253, 251, 247, 0.95);
     }
 
     .logo {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         letter-spacing: 1px;
         text-align: center;
         padding: 0.2rem 0;
@@ -751,7 +753,7 @@ section {
         height: 340px;
         order: 1;
         width: 100%;
-        background: url('perfil1.png') center top / cover no-repeat;
+        background: url('perfil1.PNG') center top / cover no-repeat;
     }
 
     .bio-content {
@@ -766,14 +768,38 @@ section {
         margin-right: auto;
     }
 
+    /* ===== FORMULARIO MÓVIL ===== */
+    .presupuesto-form {
+        padding: 1.2rem;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
     .presupuesto-form .form-row {
         grid-template-columns: 1fr;
         gap: 0;
+        width: 100%;
     }
 
-    .presupuesto-form {
-        padding: 1.5rem;
-        max-width: 100%;
+    .presupuesto-form .form-group {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .presupuesto-form .form-group.full-width {
+        grid-column: 1;
+    }
+
+    .presupuesto-form input[type="text"],
+    .presupuesto-form input[type="email"],
+    .presupuesto-form input[type="tel"],
+    .presupuesto-form input[type="date"],
+    .presupuesto-form select,
+    .presupuesto-form textarea {
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 0.8rem 1rem;
     }
 
     .footer-grid {
@@ -825,7 +851,7 @@ section {
 
     .bio-image {
         height: 280px;
-        background: url('perfil1.png') center top / cover no-repeat;
+        background: url('perfil1.PNG') center top / cover no-repeat;
     }
 
     .presupuesto-form {

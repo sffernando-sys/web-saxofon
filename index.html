@@ -91,7 +91,7 @@
         <div class="section-divider"></div>
 
         <!-- ===== FORMULARIO DE PRESUPUESTO ===== -->
-        <div class="presupuesto-form">
+        <form class="presupuesto-form" action="https://formspree.io" method="POST">
             <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--oscuro); margin-bottom: 0.5rem;">
                 <span class="lang-es">Solicita tu presupuesto</span>
                 <span class="lang-en" style="display:none;">Request your quote</span>
@@ -101,87 +101,103 @@
                 <span class="lang-en" style="display:none;">Fill out the form and I'll contact you to make your event an unforgettable experience.</span>
             </p>
 
-            <form id="form-presupuesto" action="#" method="POST">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="tipo-evento">
-                            <span class="lang-es">Tipo de evento <span class="required">*</span></span>
-                            <span class="lang-en" style="display:none;">Event type <span class="required">*</span></span>
-                        </label>
-                        <select id="tipo-evento" name="tipo-evento" required>
-                            <option value="">Selecciona el tipo de evento</option>
-                            <option value="boda">Boda</option>
-                            <option value="corporativo">Evento corporativo</option>
-                            <option value="privado">Evento privado</option>
-                            <option value="hotel">Hotel / Resort</option>
-                            <option value="otro">Otro</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="nombre">
-                            <span class="lang-es">Nombre completo <span class="required">*</span></span>
-                            <span class="lang-en" style="display:none;">Full name <span class="required">*</span></span>
-                        </label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">
-                            <span class="lang-es">Correo electrónico <span class="required">*</span></span>
-                            <span class="lang-en" style="display:none;">Email <span class="required">*</span></span>
-                        </label>
-                        <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">
-                            <span class="lang-es">Teléfono <span class="required">*</span></span>
-                            <span class="lang-en" style="display:none;">Phone <span class="required">*</span></span>
-                        </label>
-                        <input type="tel" id="telefono" name="telefono" placeholder="+52 55 1234 5678" required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="fecha">
-                            <span class="lang-es">Fecha del evento <span class="required">*</span></span>
-                            <span class="lang-en" style="display:none;">Event date <span class="required">*</span></span>
-                        </label>
-                        <input type="date" id="fecha" name="fecha" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="ciudad">
-                            <span class="lang-es">Ciudad <span class="required">*</span></span>
-                            <span class="lang-en" style="display:none;">City <span class="required">*</span></span>
-                        </label>
-                        <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad donde se realizará el evento" required>
-                    </div>
-                </div>
-
+            <div class="form-row">
                 <div class="form-group">
-                    <label for="mensaje">
-                        <span class="lang-es">Detalles adicionales</span>
-                        <span class="lang-en" style="display:none;">Additional details</span>
+                    <label for="tipo-evento">
+                        <span class="lang-es">Tipo de evento <span class="required">*</span></span>
+                        <span class="lang-en" style="display:none;">Event type <span class="required">*</span></span>
                     </label>
-                    <textarea id="mensaje" name="mensaje" placeholder="Cuéntame sobre tu evento, duración, repertorio deseado, requisitos especiales..."></textarea>
+                    <select id="tipo-evento" name="event_type" required>
+                        <option value="">
+                            <span class="lang-es">Selecciona el tipo de evento</span>
+                            <span class="lang-en" style="display:none;">Select event type</span>
+                        </option>
+                        <option value="boda">
+                            <span class="lang-es">Boda</span>
+                            <span class="lang-en" style="display:none;">Wedding</span>
+                        </option>
+                        <option value="corporativo">
+                            <span class="lang-es">Evento corporativo</span>
+                            <span class="lang-en" style="display:none;">Corporate event</span>
+                        </option>
+                        <option value="privado">
+                            <span class="lang-es">Evento privado</span>
+                            <span class="lang-en" style="display:none;">Private event</span>
+                        </option>
+                        <option value="hotel">
+                            <span class="lang-es">Hotel / Resort</span>
+                            <span class="lang-en" style="display:none;">Hotel / Resort</span>
+                        </option>
+                        <option value="otro">
+                            <span class="lang-es">Otro</span>
+                            <span class="lang-en" style="display:none;">Other</span>
+                        </option>
+                    </select>
                 </div>
-
-                <div class="checkbox-group">
-                    <input type="checkbox" id="politicas" name="politicas" required>
-                    <label for="politicas">
-                        <span class="lang-es">Acepto la <a href="#">política de privacidad</a> y el tratamiento de mis datos. <span class="required">*</span></span>
-                        <span class="lang-en" style="display:none;">I accept the <a href="#">privacy policy</a> and the processing of my data. <span class="required">*</span></span>
+                <div class="form-group">
+                    <label for="nombre">
+                        <span class="lang-es">Nombre completo <span class="required">*</span></span>
+                        <span class="lang-en" style="display:none;">Full name <span class="required">*</span></span>
                     </label>
+                    <input type="text" id="nombre" name="name" placeholder="Tu nombre" required>
                 </div>
+            </div>
 
-                <button type="submit" class="btn-enviar">
-                    <span class="lang-es">Enviar solicitud ✦</span>
-                    <span class="lang-en" style="display:none;">Send request ✦</span>
-                </button>
-            </form>
-        </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">
+                        <span class="lang-es">Correo electrónico <span class="required">*</span></span>
+                        <span class="lang-en" style="display:none;">Email <span class="required">*</span></span>
+                    </label>
+                    <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">
+                        <span class="lang-es">Teléfono <span class="required">*</span></span>
+                        <span class="lang-en" style="display:none;">Phone <span class="required">*</span></span>
+                    </label>
+                    <input type="tel" id="telefono" name="phone" placeholder="+52 55 1234 5678" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fecha">
+                        <span class="lang-es">Fecha del evento <span class="required">*</span></span>
+                        <span class="lang-en" style="display:none;">Event date <span class="required">*</span></span>
+                    </label>
+                    <input type="date" id="fecha" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="ciudad">
+                        <span class="lang-es">Ciudad <span class="required">*</span></span>
+                        <span class="lang-en" style="display:none;">City <span class="required">*</span></span>
+                    </label>
+                    <input type="text" id="ciudad" name="city" placeholder="Ciudad donde se realizará el evento" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">
+                    <span class="lang-es">Detalles adicionales</span>
+                    <span class="lang-en" style="display:none;">Additional details</span>
+                </label>
+                <textarea id="mensaje" name="message" placeholder="Cuéntame sobre tu evento, duración, repertorio deseado, requisitos especiales..."></textarea>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="politicas" name="politicas" required>
+                <label for="politicas">
+                    <span class="lang-es">Acepto la <a href="#">política de privacidad</a> y el tratamiento de mis datos. <span class="required">*</span></span>
+                    <span class="lang-en" style="display:none;">I accept the <a href="#">privacy policy</a> and the processing of my data. <span class="required">*</span></span>
+                </label>
+            </div>
+
+            <button type="submit" class="btn-enviar">
+                <span class="lang-es">Enviar solicitud ✦</span>
+                <span class="lang-en" style="display:none;">Send request ✦</span>
+            </button>
+        </form>
     </section>
 
     <!-- ===== FOOTER CENTRALIZADO Y UNIFICADO ===== -->

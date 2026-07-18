@@ -74,11 +74,6 @@ section[id] {
     text-transform: uppercase;
 }
 
-.logo .logo-dot {
-    color: var(--dorado);
-    margin: 0 0.3rem;
-}
-
 .logo .logo-sub {
     color: var(--dorado);
     font-weight: 400;
@@ -254,12 +249,13 @@ section {
 }
 
 .bio-image {
-    height: 450px;
+    display: block;
+    min-height: 450px;
+    flex: 1;
     border-radius: var(--radius);
     background: url('perfil1.PNG') center top / cover no-repeat;
     box-shadow: var(--shadow);
     transition: var(--transition);
-    flex: 1;
     order: 2;
 }
 
@@ -693,10 +689,6 @@ section {
         width: 100%;
     }
 
-    .logo .logo-dot {
-        margin: 0 0.15rem;
-    }
-
     .main-nav {
         gap: 0.6rem;
         flex-wrap: wrap;
@@ -750,10 +742,11 @@ section {
     }
 
     .bio-image {
-        height: 340px;
-        order: 1;
         width: 100%;
-        background: url('perfil1.PNG') center top / cover no-repeat;
+        height: 340px;
+        min-height: 340px;
+        order: 1;
+        flex: none;
     }
 
     .bio-content {
@@ -851,7 +844,7 @@ section {
 
     .bio-image {
         height: 280px;
-        background: url('perfil1.PNG') center top / cover no-repeat;
+        min-height: 280px;
     }
 
     .presupuesto-form {

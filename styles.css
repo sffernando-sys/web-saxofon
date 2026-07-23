@@ -39,6 +39,7 @@ body {
 /* ===== CORRECCIÓN QUIRÚRGICA: FRENO DE MENÚ ===== */
 #inicio,
 #biografia,
+#clases,
 #presupuesto,
 .presupuesto-section,
 .presupuesto-form,
@@ -297,6 +298,66 @@ section {
 .bio-content .bio-highlight {
     color: var(--dorado-oscuro);
     font-weight: 600;
+}
+
+/* ===== CLASES DE SAXOFÓN ===== */
+.clases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem auto;
+    max-width: 1100px;
+    padding: 0 1.5rem;
+}
+
+.clases-grid > div {
+    background: var(--blanco);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.clases-grid > div:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--dorado);
+}
+
+.clases-grid h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--oscuro);
+    margin-bottom: 0.5rem;
+}
+
+.clases-grid p {
+    color: #4A4A4A;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.btn-clases {
+    display: inline-block;
+    background: var(--dorado);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.25);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-clases:hover {
+    background: var(--dorado-oscuro);
+    transform: scale(1.04);
+    box-shadow: 0 8px 25px rgba(197, 160, 89, 0.35);
 }
 
 /* ===== PRESUPUESTO ===== */
@@ -663,6 +724,7 @@ section {
 
     #inicio,
     #biografia,
+    #clases,
     #presupuesto,
     .presupuesto-section,
     .presupuesto-form,
@@ -752,6 +814,29 @@ section {
     .bio-content {
         order: 2;
         width: 100%;
+    }
+
+    /* ===== CLASES MÓVIL ===== */
+    .clases-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0;
+        margin: 2rem auto;
+    }
+
+    .clases-grid > div {
+        padding: 1.5rem;
+    }
+
+    .btn-clases {
+        width: 100%;
+        max-width: 340px;
+        box-sizing: border-box;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        padding: 0.9rem 2rem;
+        font-size: 0.95rem;
     }
 
     .presupuesto-grid {
@@ -845,6 +930,16 @@ section {
     .bio-image {
         height: 280px;
         min-height: 280px;
+    }
+
+    .clases-grid > div {
+        padding: 1.2rem;
+    }
+
+    .btn-clases {
+        max-width: 100%;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
     }
 
     .presupuesto-form {
